@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/mainScene.unity
+    guid: c72ed30ec2e5b134bbec73feda7a6da3
+  - enabled: 1
     path: Assets/Scenes/SpringStoryScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/mainScene.unity
-    guid: c72ed30ec2e5b134bbec73feda7a6da3
+    path: Assets/Scenes/SummerStoryScene.unity
+    guid: dae8792b9e8cf454784d822f9551cfca
+  - enabled: 1
+    path: Assets/Scenes/FallStoryScene.unity
+    guid: 7e1e739cf2bf9a44a9b841de34b16af2
+  - enabled: 1
+    path: Assets/Scenes/WinterStoryScene.unity
+    guid: 9049a7ec1c80b5b46824beb4610f43af
   m_configObjects: {}
