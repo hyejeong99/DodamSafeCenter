@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 092723c695c832c46953f0fe92e79790
+  - enabled: 1
     path: Assets/Scenes/mainScene.unity
     guid: c72ed30ec2e5b134bbec73feda7a6da3
   - enabled: 1
@@ -20,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinterStoryScene.unity
     guid: 9049a7ec1c80b5b46824beb4610f43af
+  - enabled: 1
+    path: Assets/Scenes/SpringDiaryScene.unity
+    guid: 7d49d6c441c2b9b4b9da873f04ceee20
+  - enabled: 1
+    path: Assets/Scenes/SummerDiaryScene.unity
+    guid: e3907b4de9fdcd04cbd15d7e9b2e4481
+  - enabled: 1
+    path: Assets/Scenes/FallDiaryScene.unity
+    guid: 91ce165b897ee8b41b90ebf17020449c
+  - enabled: 1
+    path: Assets/Scenes/WinterDiaryScene.unity
+    guid: 279518c7e0a693b44832e279a8abe810
   m_configObjects: {}
