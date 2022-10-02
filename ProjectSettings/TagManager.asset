@@ -6,6 +6,7 @@ TagManager:
   tags:
   - select1
   - select2
+  - goSelect
   layers:
   - Default
   - TransparentFX

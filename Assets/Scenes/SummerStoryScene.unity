@@ -482,6 +482,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 991915523}
     m_Modifications:
+    - target: {fileID: 253387143, guid: c83854675db553844b90c430e820abad, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2118360464369982960, guid: c83854675db553844b90c430e820abad, type: 3}
       propertyPath: m_Name
       value: Panel
@@ -586,6 +590,10 @@ PrefabInstance:
     - target: {fileID: 8621465746467611266, guid: 92a74b4f8f1fee544b75a3f4490a3048, type: 3}
       propertyPath: m_Name
       value: chatBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621465746467611266, guid: 92a74b4f8f1fee544b75a3f4490a3048, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8621465746467611269, guid: 92a74b4f8f1fee544b75a3f4490a3048, type: 3}
       propertyPath: m_Pivot.x
