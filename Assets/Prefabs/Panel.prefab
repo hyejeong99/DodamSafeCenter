@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 2118360463917023236}
   m_Layer: 0
   m_Name: selectButton2
-  m_TagString: Untagged
+  m_TagString: select2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 2118360464351513709}
   m_Layer: 0
   m_Name: selectButton1
-  m_TagString: Untagged
+  m_TagString: select1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
