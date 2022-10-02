@@ -6,6 +6,6 @@ public class exit : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneManager.LoadScene("mainScene");
+        SceneManager.LoadScene("MainScene");
     }
 }
