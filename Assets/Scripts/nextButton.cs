@@ -17,18 +17,6 @@ public class nextButton : MonoBehaviour, IPointerClickHandler
 
     public string sceneToLoad;
 
-    //BGM
-    public AudioClip springLaugh;
-    public AudioClip springDrink;
-    public AudioClip springCough;
-    public AudioClip springEat;
-    AudioSource audioSource;
-
-    void Awake()
-    {
-        //this.audioSource = GetComponent<AudioSource>();
-    }
-
     void Start()
     {
         isDone = false;
@@ -37,9 +25,6 @@ public class nextButton : MonoBehaviour, IPointerClickHandler
         maxChildCount = scene.transform.childCount;
         curChildCount = 0;
 
-        //기침 효과음 재생
-        //audioSource.clip=springCough;
-        //audioSource.Play();
     }
 
 
@@ -72,27 +57,6 @@ public class nextButton : MonoBehaviour, IPointerClickHandler
             isDone = true;
             PlayerPrefs.SetInt("select", 0);
         }
-        //Debug.Log(curChildCount);
-
-        //bgm재생
-        //switch (curChildCount){
-        //    case 1:
-        //        audioSource.Stop();
-        //        audioSource.clip=springLaugh;
-        //        audioSource.Play();
-        //        break;
-        //    case 3:
-        //        audioSource.Stop();
-        //        break;
-        //    case 5:
-        //        audioSource.clip=springDrink;
-        //        audioSource.Play();
-        //        break;
-        //    case 7:
-        //        audioSource.clip=springEat;
-        //        audioSource.Play();
-        //        break;
-        //} 
     }
 
 
