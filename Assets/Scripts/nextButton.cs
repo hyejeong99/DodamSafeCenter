@@ -26,7 +26,7 @@ public class nextButton : MonoBehaviour, IPointerClickHandler
 
     void Awake()
     {
-        this.audioSource = GetComponent<AudioSource>();
+        //this.audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -38,8 +38,8 @@ public class nextButton : MonoBehaviour, IPointerClickHandler
         curChildCount = 0;
 
         //기침 효과음 재생
-        audioSource.clip=springCough;
-        audioSource.Play();
+        //audioSource.clip=springCough;
+        //audioSource.Play();
     }
 
 
@@ -49,31 +49,50 @@ public class nextButton : MonoBehaviour, IPointerClickHandler
         {
             scene.transform.GetChild(curChildCount).gameObject.SetActive(false);
             curChildCount++;
-            scene.transform.GetChild(curChildCount).gameObject.SetActive(true);
+
+            
+            if(scene.transform.GetChild(curChildCount).gameObject.tag != "extraScript") 
+            {   
+                scene.transform.GetChild(curChildCount).gameObject.SetActive(true);
+            }
+            else
+            {   //  다음 child 오브젝트가 선택지에 따른 추가스크립트라면
+                if(PlayerPrefs.GetInt("select") == 1 && scene.transform.GetChild(curChildCount).gameObject.tag == "extraScript")
+                {
+                    scene.transform.GetChild(curChildCount).gameObject.SetActive(true);
+                }
+                else
+                {
+                    curChildCount++;
+                    scene.transform.GetChild(curChildCount).gameObject.SetActive(true);
+                }
+            }
+            
 
             isDone = true;
+            PlayerPrefs.SetInt("select", 0);
         }
-        Debug.Log(curChildCount);
+        //Debug.Log(curChildCount);
 
         //bgm재생
-        switch (curChildCount){
-            case 1:
-                audioSource.Stop();
-                audioSource.clip=springLaugh;
-                audioSource.Play();
-                break;
-            case 3:
-                audioSource.Stop();
-                break;
-            case 5:
-                audioSource.clip=springDrink;
-                audioSource.Play();
-                break;
-            case 7:
-                audioSource.clip=springEat;
-                audioSource.Play();
-                break;
-        } 
+        //switch (curChildCount){
+        //    case 1:
+        //        audioSource.Stop();
+        //        audioSource.clip=springLaugh;
+        //        audioSource.Play();
+        //        break;
+        //    case 3:
+        //        audioSource.Stop();
+        //        break;
+        //    case 5:
+        //        audioSource.clip=springDrink;
+        //        audioSource.Play();
+        //        break;
+        //    case 7:
+        //        audioSource.clip=springEat;
+        //        audioSource.Play();
+        //        break;
+        //} 
     }
 
 
