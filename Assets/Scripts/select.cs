@@ -21,6 +21,7 @@ public class select : MonoBehaviour, IPointerClickHandler
         if(this.tag == "select1")
         {
             selectQ.Enqueue(1);
+            PlayerPrefs.SetInt("select", 1);
         }
         else if (this.tag == "select2")
         {
