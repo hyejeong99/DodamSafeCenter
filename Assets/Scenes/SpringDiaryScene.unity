@@ -310,6 +310,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1144670586}
     m_Modifications:
+    - target: {fileID: 111082129072652029, guid: 226c24dad1d3e1b4ba06fd9d1914270a, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 111082129303810356, guid: 226c24dad1d3e1b4ba06fd9d1914270a, type: 3}
       propertyPath: m_Name
       value: diarySquare
