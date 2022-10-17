@@ -42,7 +42,7 @@ public class nextButton : MonoBehaviour, IPointerClickHandler
             }
             else
             {   //  다음 child 오브젝트가 선택지에 따른 추가스크립트라면
-                if(PlayerPrefs.GetInt("select") == 1 && scene.transform.GetChild(curChildCount).gameObject.tag == "extraScript")
+                if(PlayerPrefs.GetInt("select") == 0 && scene.transform.GetChild(curChildCount).gameObject.tag == "extraScript")
                 {
                     scene.transform.GetChild(curChildCount).gameObject.SetActive(true);
                 }
@@ -55,14 +55,13 @@ public class nextButton : MonoBehaviour, IPointerClickHandler
             
 
             isDone = true;
-            PlayerPrefs.SetInt("select", 0);
+            PlayerPrefs.SetInt("select", -1);
         }
     }
 
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("클릭 감지");
         if(curChildCount == maxChildCount - 1)  //  스토리가 끝나면
         {
             SceneManager.LoadScene(sceneToLoad);
