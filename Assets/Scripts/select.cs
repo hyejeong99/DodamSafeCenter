@@ -20,15 +20,13 @@ public class select : MonoBehaviour, IPointerClickHandler
     {
         if(this.tag == "select1")
         {
-            selectQ.Enqueue(1);
-            PlayerPrefs.SetInt("select", 1);
+            selectQ.Enqueue(0);
+            PlayerPrefs.SetInt("select", 0);
         }
         else if (this.tag == "select2")
         {
-            selectQ.Enqueue(2);
+            selectQ.Enqueue(1);
         }
-
-        Debug.Log("큐 사이즈 : "+ selectQ.Count);
 
         nextButton.GetComponent<Image>().enabled = true;
     }

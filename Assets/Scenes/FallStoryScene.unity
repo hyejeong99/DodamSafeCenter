@@ -511,6 +511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: nextButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8102424918286799224, guid: 4abc4ccf1ddab744bbaf9759d2fa3a8a, type: 3}
+      propertyPath: sceneToLoad
+      value: FallDiaryScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4abc4ccf1ddab744bbaf9759d2fa3a8a, type: 3}
 --- !u!1 &87885564

@@ -486,6 +486,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208801396}
     m_Modifications:
+    - target: {fileID: 1267333699, guid: 226c24dad1d3e1b4ba06fd9d1914270a, type: 3}
+      propertyPath: weather
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 111082128696584340, guid: 226c24dad1d3e1b4ba06fd9d1914270a, type: 3}
       propertyPath: m_text
       value: "2022\uB144 10\uC6D4 28\uC77C"
