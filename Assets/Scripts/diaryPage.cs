@@ -10,6 +10,8 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
 {
     TextMeshProUGUI diaryText;
     int page;
+    GameObject[] redLine;
+    public int redLineNum;
 
     Queue selectQ;
 
@@ -21,6 +23,7 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
     {
         diaryText = gameObject.GetComponent<TextMeshProUGUI>();
         page = 1;
+        redLine = new GameObject[redLineNum];
         
 
         selectList = new List<List<string>>();
@@ -30,6 +33,12 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
         }
         selectQ = selectQClass.selectQ;
         WriteText();
+
+
+        for(int i=0; i<redLineNum; i++)
+        {
+            redLine[i]= GameObject.Find("redLine" + (i + 1).ToString());
+        }
     }
     
     void WriteText()
@@ -78,19 +87,21 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
             case 1:
                 diaryText.text = "오늘은 미세먼지가 심해서 하늘이 뿌옜다. ";
                 diaryText.text += selectList[0][(int)selectQ.Dequeue()];
-                diaryText.text += "선생님이 미세먼지가 심한 날에는 KF 마스크를 쓰는 것이 좋다고 말씀하셨다. " +
+                diaryText.text += "\n선생님이 미세먼지가 심한 날에는 KF 마스크를 쓰는 것이 좋다고 말씀하셨다. " +
                     "오늘은 원래 체육 야외 수업이 있는 날인데 미세먼지가 심해서 취소됐다. " +
                     "하지만 대신에 친구들과 영화를 보며 반에서 재밌게 놀수 있어서 좋았다.\n" +
                     "학교 수업이 끝나고 집으로 돌아와 쉬고 있는데 미세먼지 때문에 목이 불편했다. ";
                 diaryText.text += selectList[1][(int)selectQ.Dequeue()];
-                diaryText.text += "미세먼지가 심해서 오늘 하루 종일 실내에만 있으니 답답한 느낌이 들었다. ";
+                diaryText.text += "\n목이 아플 땐 물을 마시는 게 좋은가보다.\n";
+                diaryText.text += "그런데 미세먼지가 심해서 오늘 하루 종일 실내에만 있으니 답답한 느낌이 들었다.\n";
                 diaryText.text += selectList[2][(int)selectQ.Dequeue()];
-                diaryText.text += "같이 맛있는 저녁을 먹으니 아팠던 목이 싹 낫는 것 같았다. 끝!";
+                diaryText.text += "\n같이 맛있는 저녁을 먹으니 아팠던 목이 싹 낫는 것 같았다. 끝!";
                 break;
 
             case 2:
                 diaryText.text = "오늘은 태풍이 왔다. 아침에 비가 오니 ";
                 diaryText.text += selectList[0][(int)selectQ.Dequeue()];
+                diaryText.text = "\n태풍이 온 날에는 우비를 입어야겠다. ";
                 diaryText.text += "그런데 내가 깜빡하고 집 창문을 열어놓고 나온 게 생각났다. 고민하다가 ";
                 summerText = (int)selectQ.Dequeue();    //  추가 텍스트 대비하여 저장
                 diaryText.text += selectList[1][summerText];
@@ -138,6 +149,38 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
         if(page < diaryText.textInfo.pageCount)
         {
             diaryText.pageToDisplay = ++page;
+            switch (weather)    //  중요한 문장 밑줄 보여주기
+            {
+                case 1:
+                    if (page == 2)
+                    {
+                        redLine[0].GetComponent<SpriteRenderer>().enabled = false;
+                        break;
+                    }
+                    if (page == 3)
+                    {
+                        redLine[1].GetComponent<SpriteRenderer>().enabled = true;
+                        redLine[2].GetComponent<SpriteRenderer>().enabled = true;
+                        break;
+                    }
+                    if (page == 4)
+                    {
+                        redLine[1].GetComponent<SpriteRenderer>().enabled = false;
+                        redLine[2].GetComponent<SpriteRenderer>().enabled = false;
+                        redLine[3].GetComponent<SpriteRenderer>().enabled = true;
+                        break;
+                    }
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+            }
             if(page == diaryText.textInfo.pageCount)
             {
                 GameObject.Find("stamp").gameObject.GetComponent<Image>().enabled = true;
