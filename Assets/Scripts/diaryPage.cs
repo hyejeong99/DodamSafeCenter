@@ -10,8 +10,8 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
 {
     TextMeshProUGUI diaryText;
     int page;
-    GameObject[] redLine;
-    public int redLineNum;
+    GameObject redLine;
+    GameObject star;
 
     Queue selectQ;
 
@@ -23,7 +23,9 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
     {
         diaryText = gameObject.GetComponent<TextMeshProUGUI>();
         page = 1;
-        redLine = new GameObject[redLineNum];
+
+        redLine = GameObject.Find("redLine");
+        star = GameObject.Find("star");
         
 
         selectList = new List<List<string>>();
@@ -33,12 +35,6 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
         }
         selectQ = selectQClass.selectQ;
         WriteText();
-
-
-        for(int i=0; i<redLineNum; i++)
-        {
-            redLine[i]= GameObject.Find("redLine" + (i + 1).ToString());
-        }
     }
     
     void WriteText()
@@ -56,11 +52,11 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
 
             case 2:
                 selectList[0].Add("우산을 쓰고 나갔다. 그런데 바람 때문에 우산이 자꾸 날아가려고 해서 힘들었다. ");
-                selectList[0].Add("우비를 입고 나갔다. ");
+                selectList[0].Add("우비를 입고 나갔다. 바람이 세게 불어도 손이 자유로워서 좋았다.");
                 selectList[1].Add("집에 돌아가서 창문을 닫고 학교로 뛰었다. ");
                 selectList[1].Add("지각하면 안되니 학교로 갔다. ");
                 selectList[2].Add("재난 문자를 차단해보라고 했다. 그러자 옆에 있던 승희가 재난 문자를 차단하면 안된다고 알려줬다. ");
-                selectList[2].Add("알림 설정을 바꿔보라고 말했다. ");
+                selectList[2].Add("재난 문자를 차단하면 위험한 상황이 생길 수도 있으니, 알림 설정을 바꿔보라고 말했다.");
                 break;
 
             case 3:
@@ -101,17 +97,18 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
             case 2:
                 diaryText.text = "오늘은 태풍이 왔다. 아침에 비가 오니 ";
                 diaryText.text += selectList[0][(int)selectQ.Dequeue()];
-                diaryText.text = "\n태풍이 온 날에는 우비를 입어야겠다. ";
-                diaryText.text += "그런데 내가 깜빡하고 집 창문을 열어놓고 나온 게 생각났다. 고민하다가 ";
+                diaryText.text += "\n태풍이 온 날에는 우비를 입어야겠다. ";
+                diaryText.text += "\n그런데 내가 깜빡하고 집 창문을 열어놓고 나온 게 생각났다. 고민하다가 ";
                 summerText = (int)selectQ.Dequeue();    //  추가 텍스트 대비하여 저장
                 diaryText.text += selectList[1][summerText];
                 diaryText.text += "반 친구들이 모두 물에 젖은 생쥐같아서 웃겼다.\n" +
                     "그런데 수업 시간에 민준이 핸드폰에서 재난 문자 알림이 울려서 민준이가 짜증을 냈다. 나는 ";
                 diaryText.text += selectList[2][(int)selectQ.Dequeue()];
+                diaryText.text += "\n재난 문자는 긴급한 상황에 필요하니 항상 켜두자! ";
                 diaryText.text += "\n학교가 끝나고 아빠가 데리러 오셔서 같이 집에 갔다. ";
                 if(summerText == 1)
                 {
-                    diaryText.text += "그런데 내가 아침에 창문을 열고 나가서 집에 비가 흥건했다. 아빠는 다음부터 문을 꼭 닫아야 한다고 말하셨다. ";
+                    diaryText.text += "그런데 내가 아침에 창문을 열고 나가서 집에 비가 흥건했다. 아빠는 다음부터 문을 꼭 닫아야 한다고 하셨다. ";
                 }
                 diaryText.text += "그리고 아빠는 비가 온다며 전을 부쳐주셨다. " +
                     "태풍은 안 왔으면 좋겠지만 전은 매일 먹고 싶다. 끝!";
@@ -154,25 +151,55 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
                 case 1:
                     if (page == 2)
                     {
-                        redLine[0].GetComponent<SpriteRenderer>().enabled = false;
-                        break;
+                        redLine.transform.GetChild(0).gameObject.SetActive(false);
+                        star.transform.GetChild(0).gameObject.SetActive(false);
                     }
                     if (page == 3)
                     {
-                        redLine[1].GetComponent<SpriteRenderer>().enabled = true;
-                        redLine[2].GetComponent<SpriteRenderer>().enabled = true;
-                        break;
+                        redLine.transform.GetChild(1).gameObject.SetActive(true);
+                        star.transform.GetChild(1).gameObject.SetActive(true);
+                        redLine.transform.GetChild(2).gameObject.SetActive(true);
+                        star.transform.GetChild(2).gameObject.SetActive(true);
                     }
                     if (page == 4)
                     {
-                        redLine[1].GetComponent<SpriteRenderer>().enabled = false;
-                        redLine[2].GetComponent<SpriteRenderer>().enabled = false;
-                        redLine[3].GetComponent<SpriteRenderer>().enabled = true;
-                        break;
+                        redLine.transform.GetChild(1).gameObject.SetActive(false);
+                        star.transform.GetChild(1).gameObject.SetActive(false);
+                        redLine.transform.GetChild(2).gameObject.SetActive(false);
+                        star.transform.GetChild(2).gameObject.SetActive(false);
+
+                        redLine.transform.GetChild(3).gameObject.SetActive(true);
                     }
                     break;
                 case 2:
+                    if (page == 2)
+                    {
+                        redLine.transform.GetChild(0).gameObject.SetActive(false);
+                        star.transform.GetChild(0).gameObject.SetActive(false);
+                    }
+                    if (page == 3)
+                    {
+                        redLine.transform.GetChild(1).gameObject.SetActive(true);
+                        star.transform.GetChild(1).gameObject.SetActive(true);
+                    }
+                    if (page == 4)
+                    {
+                        redLine.transform.GetChild(1).gameObject.SetActive(false);
+                        star.transform.GetChild(1).gameObject.SetActive(false);
 
+                        if(summerText == 1)
+                        {
+                            redLine.transform.GetChild(2).gameObject.SetActive(true);
+                            star.transform.GetChild(2).gameObject.SetActive(true);
+                            redLine.transform.GetChild(3).gameObject.SetActive(true);
+                        }
+                    }
+                    if (page == 5 && summerText == 1)
+                    {
+                        redLine.transform.GetChild(2).gameObject.SetActive(false);
+                        star.transform.GetChild(2).gameObject.SetActive(false);
+                        redLine.transform.GetChild(3).gameObject.SetActive(false);
+                    }
                     break;
                 case 3:
 
