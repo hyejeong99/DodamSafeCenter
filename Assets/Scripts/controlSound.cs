@@ -19,11 +19,21 @@ public class controlSound : MonoBehaviour
         audio.volume = backVol;
 
         //효과음 받아오기
-        effect1.volume = backVol*1.5f;
-        effect2.volume=backVol*1.6f;
-        effect3.volume=backVol*0.3f;
-        effect4.volume=backVol*1.6f;
-        effect5.volume=backVol*1.6f;
+        if(effect1!=null){
+            effect1.volume = backVol*1.5f;
+        }
+        if(effect2!=null){
+            effect2.volume=backVol*1.6f;
+        }
+        if(effect3!=null){
+            effect3.volume=backVol*0.3f;
+        }
+        if(effect4!=null){
+            effect4.volume=backVol*1.6f;
+        }
+        if(effect5!=null){
+            effect5.volume=backVol*1.6f;
+        }
     }
 
 }

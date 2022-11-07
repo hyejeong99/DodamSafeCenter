@@ -21,11 +21,26 @@ public class backSound : MonoBehaviour
         audio.volume = backSlider.value;
 
         //효과음
-        effect1.volume = backSlider.value*1.5f;
+        /*effect1.volume = backSlider.value*1.5f;
         effect2.volume=backSlider.value*1.6f;
         effect3.volume=backSlider.value*0.3f;
         effect4.volume=backSlider.value*1.6f;
-        effect5.volume=backSlider.value*1.6f;
+        effect5.volume=backSlider.value*1.6f;*/
+        if(effect1!=null){
+            effect1.volume = backSlider.value*1.5f;
+        }
+        if(effect2!=null){
+            effect2.volume=backSlider.value*1.6f;
+        }
+        if(effect3!=null){
+            effect3.volume=backSlider.value*0.3f;
+        }
+        if(effect4!=null){
+            effect4.volume=backSlider.value*1.6f;
+        }
+        if(effect5!=null){
+            effect5.volume=backSlider.value*1.6f;
+        }
     }
 
     // Update is called once per frame
@@ -43,11 +58,26 @@ public class backSound : MonoBehaviour
         PlayerPrefs.SetFloat("backvol", backVol);
 
         //효과음 조절
-        effect1.volume = backSlider.value*1.5f;
+        /*effect1.volume = backSlider.value*1.5f;
         effect2.volume = backSlider.value*1.6f;
         effect3.volume = backSlider.value*0.3f;
         effect4.volume = backSlider.value*1.6f;
-        effect5.volume = backSlider.value*1.6f;
+        effect5.volume = backSlider.value*1.6f;*/
+        if(effect1!=null){
+            effect1.volume = backSlider.value*1.5f;
+        }
+        if(effect2!=null){
+            effect2.volume=backSlider.value*1.6f;
+        }
+        if(effect3!=null){
+            effect3.volume=backSlider.value*0.3f;
+        }
+        if(effect4!=null){
+            effect4.volume=backSlider.value*1.6f;
+        }
+        if(effect5!=null){
+            effect5.volume=backSlider.value*1.6f;
+        }
     }
 
 }
