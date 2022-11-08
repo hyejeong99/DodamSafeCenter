@@ -3379,7 +3379,7 @@ PrefabInstance:
     - target: {fileID: 4216835691918586235, guid: f1154b7345bcfbd48889e483316f4bf1, type: 3}
       propertyPath: m_text
       value: "\uBC16\uC5D0\uC11C \uBCF4\uB2C8 \uC5F0\uAE30\uAC00 \uB098\uC9C0\uB294
-        \uC54A\uB294\uB2E4.\n'\uBD88\uC774 \uB09C\uAC8C \uC544\uB2CC\uAC00?'"
+        \uC54A\uB294\uB2E4.\n'\uBD88\uC774 \uB09C \uAC8C \uC544\uB2CC\uAC00?'"
       objectReference: {fileID: 0}
     - target: {fileID: 4987139877940135158, guid: f1154b7345bcfbd48889e483316f4bf1, type: 3}
       propertyPath: m_Layer
@@ -4322,11 +4322,15 @@ PrefabInstance:
     - target: {fileID: 4216835691918586235, guid: f1154b7345bcfbd48889e483316f4bf1, type: 3}
       propertyPath: m_text
       value: "\uC55E\uC9D1 \uC544\uC8FC\uBA38\uB2C8\uAC00 \uC870\uAE08 \uB354 \uAE30\uB2E4\uB824\uBCF4\uC790\uACE0
-        \uB9D0\uC500\uC2E0\uB2E4."
+        \uB9D0\uC500\uD558\uC2E0\uB2E4."
       objectReference: {fileID: 0}
     - target: {fileID: 4987139877940135158, guid: f1154b7345bcfbd48889e483316f4bf1, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987139877940135158, guid: f1154b7345bcfbd48889e483316f4bf1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7699380751904448194, guid: f1154b7345bcfbd48889e483316f4bf1, type: 3}
       propertyPath: m_Pivot.x
