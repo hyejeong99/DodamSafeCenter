@@ -1005,6 +1005,10 @@ PrefabInstance:
       propertyPath: effect3
       value: 
       objectReference: {fileID: 274389865}
+    - target: {fileID: 8639501935669117758, guid: 731aea51e5b55493d91c2c2795f60d9a, type: 3}
+      propertyPath: effect4
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8639501935699884660, guid: 731aea51e5b55493d91c2c2795f60d9a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1467,6 +1471,7 @@ MonoBehaviour:
   effect3: {fileID: 0}
   effect4: {fileID: 0}
   effect5: {fileID: 0}
+  effect6: {fileID: 0}
 --- !u!1001 &872494778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3297,6 +3302,7 @@ MonoBehaviour:
   effect3: {fileID: 274389865}
   effect4: {fileID: 0}
   effect5: {fileID: 0}
+  effect6: {fileID: 0}
 --- !u!1 &2097569789
 GameObject:
   m_ObjectHideFlags: 0
