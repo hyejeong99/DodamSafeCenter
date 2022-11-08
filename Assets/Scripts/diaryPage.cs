@@ -60,8 +60,8 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
                 break;
 
             case 3:
-                selectList[0].Add("놀라서 밖으로 나갔다. ");
-                selectList[0].Add("놀라서 아빠에게 전화했더니, 밖으로 나가라고 하셨다. ");
+                selectList[0].Add("화들짝 놀랐는데 우선 상황을 보려고 밖으로 나갔다. ");
+                selectList[0].Add("놀라서 아빠에게 전화했더니, 우선 밖으로 나가라고 하셨다. ");
                 selectList[1].Add("집으로 들어가려고 했는데, 아주머니가 조금 더 기다려보자고 하셨다. ");
                 selectList[1].Add("그래도 조금 더 기다려봤다. ");
                 selectList[2].Add("나는 민준이에게 무서웠다고 말했다. ");
@@ -71,8 +71,8 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
             case 4:
                 selectList[0].Add("추울까봐 장갑을 끼고 학교에 갔다. ");
                 selectList[0].Add("눈을 밟으며 학교에 갔다. ");
-                selectList[1].Add("그래도 주머니에 손을 넣었다. 그랬더니 미끄러워서 몇 번 넘어질뻔 했다. ");
-                selectList[1].Add("길이 미끄러워서 넘어질까봐 주머니에서 손을 뺐다. ");
+                selectList[1].Add("그래도 주머니에 손을 넣었는데, 길이 미끄러워서 몇 번 넘어질뻔 했다. ");
+                selectList[1].Add("길이 미끄러워서 넘어질 것 같아 위험하지 않도록 주머니에서 손을 뺐다. ");
                 selectList[2].Add("그래도 학원에 가려고 하는데, ");
                 selectList[2].Add("부모님께 전화하려고 하는데, ");
                 break;
@@ -117,12 +117,12 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
             case 3:
                 diaryText.text = "어제 집에 있을 때 소화전이 울렸다. ";
                 diaryText.text += selectList[0][(int)selectQ.Dequeue()];
-                diaryText.text += "앞집 아주머니랑 건물 밖으로 나갔다. " +
-                    "아주머니가 비상벨이 울리면 우선 밖으로 나가야 한다고 말하셨다. 그런데 밖에서 보니 불이 안 난 것 같았다. ";
+                diaryText.text += "앞집 아주머니랑 건물 밖으로 나갔다.\n" +
+                    "아주머니가 비상벨이 울리면 우선 밖으로 나가야 한다고 말하셨다. 그런데 밖에서 보니 불이 안 난 것 같았다.\n";
                 diaryText.text += selectList[1][(int)selectQ.Dequeue()];
                 diaryText.text += "\n기다리니 경비 아저씨가 와서 누군가 장난친 것 같다며 들어가라고 하셨다. " +
-                    "자기가 올 때까지 잘 기다렸다며 나를 칭찬해주셨다. " +
-                    "\n그런데 오늘 학교에서 알게 되었는데, 민준이가 어제 장난을 친 것이었다. ";
+                    "\n자기가 올 때까지 잘 기다렸다며 나를 칭찬해주셨다. " +
+                    "\n그런데 오늘 학교에서 알게 되었는데, 민준이가 어제 장난을 친 것이었다.\n";
                 diaryText.text += selectList[2][(int)selectQ.Dequeue()];
                 diaryText.text += "민준이는 미안하다고 했고, 오늘 같이 떡볶이를 먹고 화해했다. 끝!";
                 break;
@@ -132,7 +132,8 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
                 diaryText.text += selectList[0][(int)selectQ.Dequeue()];
                 diaryText.text += "눈이 와서 그런지 바닥이 엄청 미끄러웠다. ";
                 diaryText.text += selectList[1][(int)selectQ.Dequeue()];
-                diaryText.text += "\n그런데 학교에 있는 사이에 눈이 더 왔다. 학원에 가야 하는데 걱정이 됐다. ";
+                diaryText.text += "\n눈이 많이 온 날에는 장갑을 끼고 손을 빼서 걸어야겠다.";
+                diaryText.text += "\n그런데 학교에 있는 사이에 눈이 더 왔다. 학원에 가야 하는데 걱정이 됐다.\n";
                 diaryText.text += selectList[2][(int)selectQ.Dequeue()];
                 diaryText.text += "선생님이 반에서 기다리라고 하셨다. 그동안 친구들이랑 떠들고 재미있게 놀았다. " +
                     "조금 이따가 집까지 데려다 주셨는데, 같이 가는 친구들끼리 눈싸움도 해서 즐거웠다. " +
@@ -202,10 +203,33 @@ public class diaryPage : MonoBehaviour, IPointerClickHandler
                     }
                     break;
                 case 3:
-
+                    if (page == 2)
+                    {
+                        redLine.transform.GetChild(0).gameObject.SetActive(false);
+                        star.transform.GetChild(0).gameObject.SetActive(false);
+                    }
+                    if (page == 3)
+                    {
+                        redLine.transform.GetChild(1).gameObject.SetActive(true);
+                        star.transform.GetChild(1).gameObject.SetActive(true);
+                    }
+                    if (page == 4)
+                    {
+                        redLine.transform.GetChild(1).gameObject.SetActive(false);
+                        star.transform.GetChild(1).gameObject.SetActive(false);
+                    }
                     break;
                 case 4:
-
+                    if (page == 2)
+                    {
+                        redLine.transform.GetChild(0).gameObject.SetActive(true);
+                        star.transform.GetChild(0).gameObject.SetActive(true);
+                    }
+                    if (page == 3)
+                    {
+                        redLine.transform.GetChild(0).gameObject.SetActive(false);
+                        star.transform.GetChild(0).gameObject.SetActive(false);
+                    }
                     break;
             }
             if(page == diaryText.textInfo.pageCount)
