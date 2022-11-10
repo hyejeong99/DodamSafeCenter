@@ -9,7 +9,7 @@ public class backSound : MonoBehaviour
 {
     public Slider backSlider;
     public AudioSource audio;//배경음악
-    public AudioSource effect1, effect2, effect3, effect4, effect5, effect6;//효과음
+    public AudioSource effect1, effect2, effect3, effect4, effect5;//효과음
 
     private float backVol = 0.3f;
 
@@ -40,9 +40,9 @@ public class backSound : MonoBehaviour
         }
         if(effect2!=null){
             if(SceneManager.GetActiveScene().name=="SpringStoryScene"){
-                effect2.volume=backSlider.value*2.0f;
+                effect2.volume=backSlider.value*1.0f;
             }else if(SceneManager.GetActiveScene().name=="SummerStoryScene"){
-                effect2.volume = backSlider.value*2.0f;
+                effect2.volume = backSlider.value*1.66f;
             }else if(SceneManager.GetActiveScene().name=="FallStoryScene"){
                 effect2.volume = backSlider.value*0.6f;
             }else if(SceneManager.GetActiveScene().name=="WinterStoryScene"){
@@ -51,13 +51,13 @@ public class backSound : MonoBehaviour
         }
         if(effect3!=null){
             if(SceneManager.GetActiveScene().name=="SpringStoryScene"){
-                effect3.volume=backSlider.value*5.0f;
+                effect3.volume=backSlider.value*3.33f;
             }else if(SceneManager.GetActiveScene().name=="SummerStoryScene"){
                 effect3.volume = backSlider.value*1.66f;
             }else if(SceneManager.GetActiveScene().name=="FallStoryScene"){
                 effect3.volume = backSlider.value*0.3f;
             }else if(SceneManager.GetActiveScene().name=="WinterStoryScene"){
-                effect3.volume = backSlider.value*1.66f;
+                effect3.volume = backSlider.value*1.33f;
             }
         }
         if(effect4!=null){
@@ -66,17 +66,12 @@ public class backSound : MonoBehaviour
             }else if(SceneManager.GetActiveScene().name=="SummerStoryScene"){
                 effect4.volume = backSlider.value*1.366f;
             }else if(SceneManager.GetActiveScene().name=="FallStoryScene"){
-                effect4.volume = backSlider.value*1.66f;
+                effect4.volume = backSlider.value*1.33f;
             }
         }
         if(effect5!=null){
             if(SceneManager.GetActiveScene().name=="SummerStoryScene"){
-                effect5.volume = backSlider.value*1.66f;
-            }
-        }
-        if(effect6!=null){
-            if(SceneManager.GetActiveScene().name=="SummerStoryScene"){
-                effect6.volume = backSlider.value*1.33f;
+                effect5.volume = backSlider.value*1.33f;
             }
         }
     }
@@ -146,7 +141,7 @@ public class backSound : MonoBehaviour
             }else if(SceneManager.GetActiveScene().name=="FallStoryScene"){
                 effect3.volume = backSlider.value*0.3f;
             }else if(SceneManager.GetActiveScene().name=="WinterStoryScene"){
-                effect3.volume = backSlider.value*1.66f;
+                effect3.volume = backSlider.value*1.33f;
             }
         }
         if(effect4!=null){
@@ -155,17 +150,12 @@ public class backSound : MonoBehaviour
             }else if(SceneManager.GetActiveScene().name=="SummerStoryScene"){
                 effect4.volume = backSlider.value*1.366f;
             }else if(SceneManager.GetActiveScene().name=="FallStoryScene"){
-                effect4.volume = backSlider.value*1.66f;
+                effect4.volume = backSlider.value*1.33f;
             }
         }
         if(effect5!=null){
             if(SceneManager.GetActiveScene().name=="SummerStoryScene"){
-                effect5.volume = backSlider.value*1.66f;
-            }
-        }
-        if(effect6!=null){
-            if(SceneManager.GetActiveScene().name=="SummerStoryScene"){
-                effect6.volume = backSlider.value*1.33f;
+                effect5.volume = backSlider.value*1.33f;
             }
         }
     }
