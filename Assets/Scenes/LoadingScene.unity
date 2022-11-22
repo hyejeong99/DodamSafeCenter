@@ -390,6 +390,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2133661565}
     m_Modifications:
     - target: {fileID: 679716264738618168, guid: af50ba152c46f8f4584077a6f0159f13, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b54eb3f4db92440cfad79d46be68ac60, type: 3}
+    - target: {fileID: 679716264738618168, guid: af50ba152c46f8f4584077a6f0159f13, type: 3}
       propertyPath: m_Color.b
       value: 0.90588236
       objectReference: {fileID: 0}
@@ -440,6 +444,14 @@ PrefabInstance:
     - target: {fileID: 8312143616611526586, guid: af50ba152c46f8f4584077a6f0159f13, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312143616611526586, guid: af50ba152c46f8f4584077a6f0159f13, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312143616611526586, guid: af50ba152c46f8f4584077a6f0159f13, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8312143616611526586, guid: af50ba152c46f8f4584077a6f0159f13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -548,7 +560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB3C4\uB2F4\uC548\uC804\uC13C\uD130\nLoading"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2ffefe031902814bbad64f14f8fb95d, type: 2}
   m_sharedMaterial: {fileID: -7719437082522120736, guid: c2ffefe031902814bbad64f14f8fb95d, type: 2}
