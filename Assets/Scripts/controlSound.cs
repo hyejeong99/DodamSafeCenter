@@ -18,7 +18,7 @@ public class controlSound : MonoBehaviour
     void Start()
     {
         //슬라이더로 변경한 배경음악 값 받아오기
-        backVol = PlayerPrefs.GetFloat("backvol", 0.1f);
+        backVol = PlayerPrefs.GetFloat("backvol", 0.3f);
         audio.volume = backVol;
 
         //슬라이더로 변경한 더빙 값 받아오기
