@@ -4010,6 +4010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voiceSlider: {fileID: 880047604}
+  audio: {fileID: 852178893}
   voice1: {fileID: 867385132}
   voice2: {fileID: 203848355}
   voice3: {fileID: 67774461}

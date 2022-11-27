@@ -8,12 +8,18 @@ public class dubbingSound : MonoBehaviour
 {
     public Slider voiceSlider;
     private float dubbingVol = 0.5f;
+    public AudioSource audio;//배경음악
     public AudioSource voice1, voice2, voice3, voice4, voice5, voice6, voice7, voice8, voice9, voice10, voice11;//더빙
     // Start is called before the first frame update
     void Start()
     {
         //보이스 음량 비어있으면 0.5f 값으로 가져오기
         dubbingVol = PlayerPrefs.GetFloat("dubbingVol", 0.5f);
+        if(voiceSlider!=null){
+            voiceSlider.value = dubbingVol;
+            audio.volume = voiceSlider.value;
+
+        }
         if(voiceSlider!=null){
             voiceSlider.value = dubbingVol;
             //AI보이스 크기 조절
